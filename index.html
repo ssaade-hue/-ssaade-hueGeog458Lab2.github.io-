@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YouTube Word Cloud Lab — Results</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; line-height:1.5; margin: 0; padding: 24px; color:#111 }
+    header { max-width:900px; margin: 0 auto 24px; }
+    .container { max-width:900px; margin: 0 auto; }
+    h1,h2 { color:#0b3d91 }
+    .images { display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin: 18px 0 }
+    .card { background:#fff; border:1px solid #eee; padding:12px; box-shadow:0 1px 4px rgba(0,0,0,0.04); border-radius:6px; text-align:center }
+    .card img { max-width:360px; height:auto; display:block; margin:0 auto }
+    .links { margin: 16px 0 }
+    footer { margin-top:28px; font-size:13px; color:#444 }
+    .note { font-size:14px; color:#666 }
+    .qa { background:#f9f9fb; border:1px solid #f0f0f5; padding:16px; border-radius:8px; margin:16px 0 }
+    .qa h3 { margin-top:0 }
+    @media (max-width:720px){ .card img{ max-width:260px } }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <h1>YouTube Word Cloud Lab — Results</h1>
+    <p class="note">This page is a simple view of the project. Images are loaded from the <code>img/</code> folder and CSV results are available via the links below.</p>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Images</h2>
+      <div class="images">
+        <div class="card">
+          <img src="img/israel.png" alt="Israel word cloud" />
+          <div><strong>Figure 1</strong><br>img/israel.png</div>
+        </div>
+
+        <div class="card">
+          <img src="img/Gaza%20Peace%20Board.png" alt="Gaza Peace Board" />
+          <div><strong>Figure 2</strong><br>img/Gaza Peace Board.png</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="qa">
+      <h2>Lab questions & responses</h2>
+
+      <h3>Topic and search parameters</h3>
+      <p>The topics of my search are straightforward: I focused on the terms <em>Israel</em> and <em>Gaza Peace</em> to capture words used in public conversation about both places. For the collection I used global, English-dominant results and pulled metadata fields like video titles and descriptions so the word clouds reflect author language and framing. I sampled recent videos to capture the current zeitgeist, and exported the results into spreadsheets for later processing. The notebook can be adjusted to change language, region, date range, and sample size if you want more targeted comparisons.</p>
+
+      <h3>Why make this comparison</h3>
+      <p>I made this comparison to examine how legacy media and independent sources frame these related but politically contested topics, and to surface the common buzzwords connected to each. The aim is to see whether mainstream outlets amplify certain geopolitical narratives while grassroots sources emphasize humanitarian or activist language. By comparing word clouds we can get a quick visual sense of which terms dominate each search and which voices may be more visible. This helps ground conversations about media power in data drawn from real metadata rather than just impressions.</p>
+
+      <h3>Compare the word clouds</h3>
+      <p>The Israel word cloud shows strong connections to other countries and geopolitical terms, suggesting a broad international focus in the coverage that appears for that search. In contrast, the Gaza-centered word cloud tends to surface locally-oriented and advocacy vocabulary that centers the humanitarian or activist frame. There is overlap — place names and conflict-related tokens appear in both clouds — but the dominant themes differ in scale and framing. These differences indicate how the same regional situation can be discussed through different lenses depending on the query and sources surfaced by the platform.</p>
+
+      <h3>Possible reasons for the observed patterns</h3>
+      <p>One reason is that Israel is deeply embedded in regional and international politics, which pulls in frequent references to other countries, alliances, and military terminology. Another factor is editorial framing: major news organizations often use a consistent geopolitical vocabulary that appears repeatedly in titles and descriptions. Search algorithms and platform recommendation systems also amplify widely shared or authoritative sources, which reinforces those recurring terms. Finally, grassroots or peace-oriented content tends to prioritize different language (aid, solidarity, civilians) which changes the word-cloud composition for phrase-based queries like <em>Gaza Peace</em>.</p>
+
+      <h3>How research could be improved</h3>
+      <p>This study would benefit from a larger and more diverse sample of queries, including related search terms like "Israel US relations" or "Gaza aid" to capture framing differences more fully. It would help to vary region and language settings to compare local coverage versus global English-language media. Adding quantitative measures (word frequency tables, tf-idf, or similarity scores) and repeating collections over time would reduce sampling bias. Finally, preprocessing improvements (better stopword lists, lemmatization, and consistent tokenization) would make the word clouds more reliable and comparable.</p>
+
+      <h3>Unexpected findings or notes</h3>
+      <p>Overall the results matched my expectation that legacy media is predictable in its vocabulary, though I was a bit surprised by the prominence of certain co-occurring topics like mentions of neighboring countries. The relative predictability itself is noteworthy: it suggests a narrow set of terms dominates mainstream coverage, which may crowd out other narratives. The exercise confirmed how quickly framing differences become visible in simple visualizations like word clouds. That said, deeper quantitative work could reveal subtler biases not obvious from the clouds alone.</p>
+
+    </section>
+
+    <section>
+      <h2>Download CSV results</h2>
+      <div class="links">
+        <ul>
+          <li><a href="https://docs.google.com/spreadsheets/d/13PrIgVUu9EgNLRgZyHfEaIx3MR38Tfxg8lEXic0Pg90/edit?usp=sharing" target="_blank" rel="noopener">Google Sheet: search-result (sheet 1)</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1dx9Tf68G9f7_RPjiL4D4M1OlfnsXllqDvLma6evYnj0/edit?gid=2093666527#gid=2093666527" target="_blank" rel="noopener">Google Sheet: search-result (sheet 2)</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>If you'd like filenames without spaces, consider renaming <code>img/Gaza Peace Board.png</code> to <code>img/gaza-peace-board.png</code>. I can do that for you if you want.</p>
+    </footer>
+  </main>
+
+</body>
+</html>
